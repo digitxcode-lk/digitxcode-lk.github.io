@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitXCode - Web Development & Consultancy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="bi bi-code-slash"></i> DigitXCode
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Crafting Digital Excellence</h1>
+                        <p class="hero-subtitle">Premium web development, reliable hosting, and strategic consultancy
+                            services for modern businesses</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary me-3">Our Services</a>
+                            <a href="#portfolio" class="btn btn-outline-light">View Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="floating-card">
+                            <i class="bi bi-globe display-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Our Core Services</h2>
+                    <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom websites, web applications, e-commerce platforms, progressive web apps, API
+                            integration, database design</p>
+                        <ul class="service-list">
+                            <li>Responsive Design</li>
+                            <li>Modern Frameworks</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+                        <h3>Web Hosting</h3>
+                        <p>Reliable hosting solutions, cloud infrastructure, domain management, SSL certificates, backup
+                            services, 24/7 monitoring</p>
+                        <ul class="service-list">
+                            <li>99.9% Uptime Guarantee</li>
+                            <li>Scalable Solutions</li>
+                            <li>Security First</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3>IT Consultancy</h3>
+                        <p>Digital transformation, technology strategy, system architecture, performance audits,
+                            security assessments, training</p>
+                        <ul class="service-list">
+                            <li>Strategic Planning</li>
+                            <li>Technical Audits</li>
+                            <li>Process Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Showcasing our latest work and client successes</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image position-relative">
+                            <img src="./assets/imgs/proj-1.jpeg" alt="E-Commerce Platform" class="img-fluid w-100"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                style="background-color: rgba(0, 0, 0, 0.6); opacity: 0; transition: 0.3s;">
+                                <div class="portfolio-content text-center text-white">
+                                    <h4>E-Commerce Platform</h4>
+                                    <p>React, Node.js, MongoDB</p>
+                                    <a href="#" class="btn btn-light btn-sm">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SaaS Dashboard Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image position-relative">
+                            <img src="./assets/imgs/proj-2.jpeg" alt="SaaS Dashboard" class="img-fluid w-100"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                style="background-color: rgba(0, 0, 0, 0.6); opacity: 0; transition: 0.3s;">
+                                <div class="portfolio-content text-center text-white">
+                                    <h4>SaaS Dashboard</h4>
+                                    <p>Vue.js, Laravel, MySQL</p>
+                                    <a href="#" class="btn btn-light btn-sm">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Website Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image position-relative">
+                            <img src="./assets/imgs/proj-3.jpeg" alt="Corporate Website" class="img-fluid w-100"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                                style="background-color: rgba(0, 0, 0, 0.6); opacity: 0; transition: 0.3s;">
+                                <div class="portfolio-content text-center text-white">
+                                    <h4>Corporate Website</h4>
+                                    <p>WordPress, Custom Theme</p>
+                                    <a href="#" class="btn btn-light btn-sm">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="section-title">About TechVision</h2>
+                        <p class="lead">With over 5 years of experience in web development and digital consultancy,
+                            we've helped 100+ businesses establish their online presence and achieve digital
+                            transformation.</p>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h3 class="stat-number">150+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number">98%</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number">24/7</h3>
+                                <p>Support Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-visual">
+                        <div class="tech-stack">
+                            <div class="tech-item">React</div>
+                            <div class="tech-item">Node.js</div>
+                            <div class="tech-item">Python</div>
+                            <div class="tech-item">AWS</div>
+                            <div class="tech-item">Docker</div>
+                            <div class="tech-item">MongoDB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Ready to start your next project? Let's discuss your requirements</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message"
+                                        required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <h5>Location</h5>
+                                <p>123 Tech Street, Digital City, DC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>hello@techvision.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>&copy; 2024 TechVision. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
