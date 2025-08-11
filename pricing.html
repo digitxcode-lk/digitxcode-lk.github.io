@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - DigitXCode</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #1e1e3f 0%, #2a2a5a 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .pricing-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #06ffa5, #3a86ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #1e1e3f 0%, #2a2a5a 100%);
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,0,110,0.5);
+            box-shadow: 0 20px 40px rgba(255,0,110,0.2);
+        }
+
+        .pricing-card.popular {
+            border-color: #ff006e;
+            background: linear-gradient(135deg, #2a1a3f 0%, #3a2a5a 100%);
+            position: relative;
+        }
+
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            color: white;
+            padding: 0.5rem 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff006e;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-currency {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+        }
+
+        .hosting-price {
+            color: #06ffa5;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-name {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        .feature-value {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .feature-yes {
+            color: #06ffa5;
+        }
+
+        .feature-no {
+            color: #ff6b6b;
+        }
+
+        .feature-highlight {
+            color: #3a86ff;
+        }
+
+        .pricing-btn {
+            background: linear-gradient(135deg, #ff006e 0%, #d90368 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,0,110,0.4);
+            filter: brightness(1.1);
+        }
+
+        .pricing-card.popular .pricing-btn {
+            background: linear-gradient(135deg, #3a86ff 0%, #0066cc 100%);
+        }
+
+        .pricing-card.popular .pricing-btn:hover {
+            box-shadow: 0 10px 25px rgba(58,134,255,0.4);
+        }
+
+        .hosting-btn {
+            background: linear-gradient(135deg, #06ffa5 0%, #00cc88 100%);
+        }
+
+        .hosting-btn:hover {
+            box-shadow: 0 10px 25px rgba(6,255,165,0.4);
+        }
+
+        .additional-info {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .additional-info h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .additional-info ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .additional-info li {
+            padding: 0.5rem 0;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .additional-info li i {
+            color: #ff006e;
+            font-size: 1.1rem;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #2a2a5a 0%, #1e1e3f 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-cta h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #06ffa5 0%, #00cc88 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(6,255,165,0.3);
+        }
+
+        .content {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-title {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ff006e;
+        }
+
+        .content ul {
+            color: rgba(255,255,255,0.8);
+            padding-left: 1.5rem;
+        }
+
+        .content li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .plan-price {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="logo">
+                <i class="bi bi-code-slash"></i> DigitXCode
+            </a>
+            <!-- <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div> -->
+        </div>
+
+        <div class="pricing-hero">
+            <h1>Our Pricing Plans</h1>
+            <p>Choose the perfect solution for your business needs. Professional services with transparent pricing.</p>
+        </div>
+
+        <!-- Consultancy Section -->
+        <div class="pricing-section" id="consultancy">
+            <div class="section-header">
+                <h2># Consultancy Services</h2>
+                <p>Expert guidance and strategic solutions for your projects</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter Consultancy</div>
+                    <div class="plan-price">1500</div>
+                    <div class="plan-currency">LKR (One-time)</div>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-name">Initial Video Meeting</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-check-circle-fill"></i> YES
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Google Meet / Zoom</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-camera-video-fill"></i> Included
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">PDF Plans Document</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-file-pdf-fill"></i> YES
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Free Ongoing Support</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-clock-fill"></i> 2 Weeks
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Extended Support</span>
+                            <span class="feature-value feature-no">
+                                <i class="bi bi-x-circle-fill"></i> NO
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/YOUR_STARTER_FORM_ID" target="_blank" class="pricing-btn">
+                        <i class="bi bi-rocket-takeoff"></i> Get Started
+                    </a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="plan-name">Full Consultancy</div>
+                    <div class="plan-price">2500</div>
+                    <div class="plan-currency">LKR (One-time)</div>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-name">Initial Video Meeting</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-check-circle-fill"></i> YES
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Google Meet / Zoom</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-camera-video-fill"></i> Included
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">PDF Plans Document</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-file-pdf-fill"></i> YES
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Free Ongoing Support</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-calendar-fill"></i> 1 Month
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Extended Support</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-arrow-repeat"></i> 1000 LKR/Week
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/YOUR_FULL_CONSULTANCY_FORM_ID" target="_blank" class="pricing-btn">
+                        <i class="bi bi-star-fill"></i> Choose Full Plan
+                    </a>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <h3>Consultancy Features</h3>
+                <ul>
+                    <li><i class="bi bi-shield-check"></i> Professional consultation in Tamil or English</li>
+                    <li><i class="bi bi-file-text"></i> Detailed project analysis and strategic recommendations</li>
+                    <li><i class="bi bi-whatsapp"></i> WhatsApp support with guaranteed 2-hour response</li>
+                    <li><i class="bi bi-camera-video"></i> High-quality video meeting recordings for reference</li>
+                    <li><i class="bi bi-award"></i> Expert guidance from certified IT consultants</li>
+                    <li><i class="bi bi-clock-history"></i> Flexible scheduling with 8-hour advance booking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hosting Section -->
+        <div class="pricing-section" id="hosting">
+            <div class="section-header">
+                <h2># Hosting Services</h2>
+                <p>Reliable and scalable hosting solutions for your websites</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter Hosting</div>
+                    <div class="plan-price hosting-price">600</div>
+                    <div class="plan-currency">LKR / Month</div>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-name">Website Limit</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-globe"></i> 3 Sites
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">SSL Certificate</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-shield-check"></i> FREE
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Storage Space</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-hdd-fill"></i> 10 GB
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Support Method</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-whatsapp"></i> WhatsApp Only
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Response Time</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-clock"></i> Queue Based
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Backup Service</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-cloud-arrow-up"></i> Daily
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/YOUR_STARTER_HOSTING_FORM_ID" target="_blank" class="pricing-btn hosting-btn">
+                        <i class="bi bi-server"></i> Start Hosting
+                    </a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="plan-name">Premium Hosting</div>
+                    <div class="plan-price hosting-price">1500</div>
+                    <div class="plan-currency">LKR / Month</div>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <span class="feature-name">Website Limit</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-globe"></i> 10 Sites FREE
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Additional Sites</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-plus-circle"></i> $5 Each
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">SSL Certificate</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-shield-check"></i> FREE
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Storage Space</span>
+                            <span class="feature-value feature-highlight">
+                                <i class="bi bi-hdd-fill"></i> 50 GB
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Support Method</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-telephone-plus"></i> Phone + WhatsApp
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Response Time</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-lightning-charge"></i> Priority Support
+                            </span>
+                        </li>
+                        <li>
+                            <span class="feature-name">Backup Service</span>
+                            <span class="feature-value feature-yes">
+                                <i class="bi bi-cloud-arrow-up"></i> Daily + Weekly
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/YOUR_PREMIUM_HOSTING_FORM_ID" target="_blank" class="pricing-btn">
+                        <i class="bi bi-rocket-takeoff"></i> Go Premium
+                    </a>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <h3>Hosting Features</h3>
+                <ul>
+                    <li><i class="bi bi-speedometer2"></i> 99.9% uptime guarantee with SLA backing</li>
+                    <li><i class="bi bi-shield-lock"></i> Advanced security monitoring and malware protection</li>
+                    <li><i class="bi bi-arrow-clockwise"></i> Automatic updates and maintenance included</li>
+                    <li><i class="bi bi-graph-up-arrow"></i> CDN integration for faster global performance</li>
+                    <li><i class="bi bi-tools"></i> One-click staging environments for testing</li>
+                    <li><i class="bi bi-headset"></i> 24/7 technical support with expert assistance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <h3>Need a Custom Solution?</h3>
+            <p>Have specific requirements or need a tailored package? Let's discuss your unique needs and create a custom plan that fits your project perfectly.</p>
+            <div class="cta-buttons">
+                <a href="mailto:contact@digitxcode.com" class="cta-btn">
+                    <i class="bi bi-envelope-fill"></i> Email Us
+                </a>
+                <a href="tel:+94771234567" class="cta-btn">
+                    <i class="bi bi-telephone-fill"></i> Call Now
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section-title">Payment Information</div>
+            <ul>
+                <li>All payments must be made through our secure payment links sent via email or WhatsApp</li>
+                <li>Consultancy payments are required before service delivery begins</li>
+                <li>Hosting services are billed monthly in advance with automatic renewal</li>
+                <li>All consultancy fees are non-refundable as per our terms and conditions</li>
+                <li>Hosting services include a 30-day money-back guarantee</li>
+                <li>Extended consultancy support can be purchased separately after the free support period ends</li>
+                <li>Pricing may be subject to change with 30 days notice</li>
+            </ul>
+
+            <div class="section-title">Booking Process</div>
+            <ul>
+                <li><strong>Consultancy:</strong> Choose plan → Fill booking form → Complete payment → Schedule meeting → Receive consultation</li>
+                <li><strong>Hosting:</strong> Select plan → Provide domain details → Complete payment → Account setup → Go live within 24 hours</li>
+                <li><strong>Custom Solutions:</strong> Contact us → Discuss requirements → Receive custom quote → Approve and proceed</li>
+            </ul>
+
+            <div class="section-title">Support & Guarantees</div>
+            <ul>
+                <li><strong>Consultancy Support:</strong> WhatsApp response within 2 hours during business hours</li>
+                <li><strong>Hosting Support:</strong> Starter plan - WhatsApp queue-based | Premium plan - Priority phone + WhatsApp</li>
+                <li><strong>Uptime Guarantee:</strong> 99.9% uptime with service level agreement backing</li>
+                <li><strong>Security:</strong> SSL certificates, daily backups, and malware protection included</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                &copy; 2024 DigitXCode. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="#github"><i class="bi bi-github"></i></a>
+                <a href="#twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate pricing cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Initially hide pricing cards
+            document.querySelectorAll('.pricing-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Add click effects
+            document.querySelectorAll('.pricing-btn, .cta-btn').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = element.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255,255,255,0.2);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                    `;
+                    
+                    element.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                }
+                .pricing-btn, .cta-btn {
+                    position: relative;
+                    overflow: hidden;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Smooth scrolling for section navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
